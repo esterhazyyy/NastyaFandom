@@ -1,0 +1,1002 @@
+﻿:root {
+    --bg-dark: #24163d;
+    --bg-mid: #7a5cb5;
+    --bg-light: #f4b8d5;
+    --text-main: #fffafc;
+    --text-accent: #ffd8e8;
+    --text-dark: #2f243e;
+    --button: #ff7aa2;
+    --button-hover: #ffd4e2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+button,
+input,
+textarea {
+    font-family: "Roboto", "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    font-weight: 400;
+    color: var(--text-main);
+    min-height: 100vh;
+    /* --- НАЧАЛО ПРАВОК --- */
+    /* Перенесли градиент из .wrapper сюда и зафиксировали его */
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 35%),
+        linear-gradient(135deg, #24163d 0%, #7a5cb5 30%, #b88fc7 50%, #f4b8d5 75%, #f4b8d5 100%);
+    background-attachment: fixed;
+    /* --- КОНЕЦ ПРАВОК --- */
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.wrapper {
+    /* --- НАЧАЛО ПРАВОК --- */
+    background: transparent;
+    /* Убрали дублирующийся фон */
+    /* --- КОНЕЦ ПРАВОК --- */
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+
+header .logo {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 20px;
+    color: var(--text-accent);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header nav {
+    width: 50%;
+    margin-top: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+header nav ul li.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--text-accent);
+    border-radius: 2px;
+}
+
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 3px solid var(--text-accent);
+    color: var(--text-accent);
+}
+
+
+
+header nav ul li.btn a:hover {
+    background: linear-gradient(135deg, var(--button-hover) 0%, #ffe0eb 100%);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+.hero {
+    position: relative;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero--info {
+    width: 650px;
+    padding-top: 29px;
+    margin-top: 50px;
+    min-height: auto;
+}
+
+.hero--info h2 {
+    margin-top: 10px;
+    color: #fffafc;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    font-size: 26px;
+}
+
+.hero--info h1 {
+    color: #ffd8e8;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    font-size: 42px;
+    font-weight: 800;
+    max-width: 700px;
+    margin-bottom: 24px;
+}
+
+.hero--image {
+    position: absolute;
+    top: 115px;
+    right: 540px;
+    width: 500px;
+}
+
+.hero--image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.hero--image .caption {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero--image .caption img {
+    width: 24px;
+    height: auto;
+    border-radius: 0;
+    display: block;
+    flex-shrink: 0;
+}
+
+.hero--image .caption p {
+    color: var(--text-main);
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.part--two {
+    position: relative;
+    margin-top: 40px;
+    min-height: auto;
+}
+
+.part--two__title {
+    position: absolute;
+    top: 110px;
+    left: 600px;
+    z-index: 2;
+}
+
+.part--two__title h3 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 50px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.part--three__title {
+    position: relative;
+    z-index: 2;
+}
+
+.part--three__title .moveable-title {
+    position: absolute;
+    left: 560px;
+    top: 500px;
+    margin: 0;
+    color: var(--text-main);
+    font-size: 42px;
+    font-weight: 800;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.part--two .infoblock {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: min(100%, 700px);
+}
+
+.part--two .nastya2-text {
+    position: absolute;
+    left: 240px;
+    top: 300px;
+    width: 420px;
+    z-index: 2;
+}
+
+.editable-text {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffd8e8;
+    display: block;
+}
+
+/* Ensure paragraphs inside absolute H4 blocks show visible indentation */
+.moveable-h4 p {
+    display: block;
+    padding-left: 80px;
+    /* visible tab width — adjust as needed */
+    margin: 0 0 1em 0;
+    text-indent: 0;
+}
+
+/* Also apply indentation to H4 blocks or wrappers so whole paragraphs are tabbed */
+.part--two .infoblock h4,
+.partthreeinfo .infoblock h4,
+.moveable-h4 {
+    padding-left: 80px;
+}
+
+.part--two .infoblock img {
+    margin-top: 300px;
+    width: 70%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+}
+
+.part--two .infoblock .caption {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.part--two .infoblock .caption img {
+    margin-top: 0;
+    width: 28px;
+    height: auto;
+    border-radius: 0;
+    display: block;
+    flex-shrink: 0;
+}
+
+.part--two .infoblock .caption p {
+    color: var(--text-main);
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.partthreeinfo .infoblock .caption {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partthreeinfo .infoblock .caption img {
+    position: absolute;
+    top: 2940px;
+    right: 28px;
+    width: 21px;
+}
+
+.partthreeinfo .infoblock .caption p {
+    position: absolute;
+    top: 2941px;
+    left: 126px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+.partthreeinfo .infoblock img {
+    position: absolute;
+    top: 115px;
+    right: 28px;
+    width: 500px;
+}
+
+.partthreeinfo .image-card {
+    margin-top: 300px;
+    width: 100%;
+}
+
+.partthreeinfo .image-card img {
+    position: absolute;
+    top: 2600px;
+    left: 100px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+.partthreeinfo .nastyafourimg {
+    position: absolute;
+    top: -300px;
+    right: 28px;
+    width: 600px;
+}
+
+.partthreeinfo .infoblock .captiontwo {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partthreeinfo .infoblock .captiontwo img {
+    position: absolute;
+    top: 2940px;
+    right: 28px;
+    width: 25px;
+}
+
+.partthreeinfo .infoblock .captiontwo p {
+    position: absolute;
+    top: 2941px;
+    left: 126px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+.part--five {
+    position: relative;
+    margin-top: 40px;
+    min-height: auto;
+}
+
+.part--five__title {
+    position: absolute;
+    top: 110px;
+    left: 600px;
+    z-index: 2;
+}
+
+.part--five__title h5 {
+    white-space: nowrap;
+}
+
+.part--five .infoblock {
+    position: relative;
+    margin-top: 10px;
+    display: block;
+    gap: 0;
+    width: min(100%, 700px);
+    min-height: 1100px;
+}
+
+.part--five .nastya6-text {
+    position: absolute;
+    left: 240px;
+    top: 300px;
+    width: 420px;
+    z-index: 2;
+}
+
+.part--five .infoblock .five-photo {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.part--five .infoblock .five-photo-1 {
+    top: 2300px;
+    left: -100px;
+    width: 472px;
+}
+
+.part--five .infoblock .five-photo-2 {
+    top: 2300px;
+    left: 1200px;
+    width: 400px;
+}
+
+.part--five .infoblock .five-photo-3 {
+    top: 23px;
+    left: -200px;
+    width: 400px;
+}
+
+.part--five .infoblock .five-photo-4 {
+    top: 2300px;
+    left: 450px;
+    width: 2000px;
+}
+
+.part--five .infoblock .five-photo-5 {
+    top: 3600px;
+    left: 450px;
+    width: 800px;
+}
+
+.part--five .infoblock .five-photo-6 {
+    top: 3000px;
+    left: -70px;
+    width: 400px;
+}
+
+.part--five .infoblock .five-photo-7 {
+    top: 3000px;
+    left: 1200px;
+    width: 403px;
+}
+
+.part--five .infoblock .five-photo-8 {
+    top: 3000px;
+    left: 450px;
+    width: 700px;
+}
+
+/* первая картинка*/
+.partfiveinfo .infoblock .caption5 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption5 img {
+    position: absolute;
+    top: 2930px;
+    right: 700px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption5 p {
+    position: absolute;
+    top: 2923px;
+    left: -50px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* вторая картинка*/
+.partfiveinfo .infoblock .caption6 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption6 img {
+    position: absolute;
+    top: 2787px;
+    right: 150px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption6 p {
+    position: absolute;
+    top: 2780px;
+    left: 500px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* третья картинка*/
+.partfiveinfo .infoblock .caption7 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption7 img {
+    position: absolute;
+    top: 2932px;
+    right: -597px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption7 p {
+    position: absolute;
+    top: 2925px;
+    left: 1245px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* четвертая картинка*/
+.partfiveinfo .infoblock .caption8 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption8 img {
+    position: absolute;
+    top: 3537px;
+    right: 680px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption8 p {
+    position: absolute;
+    top: 3530px;
+    left: -30px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* пятая картинка*/
+.partfiveinfo .infoblock .caption10 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption10 img {
+    position: absolute;
+    top: 4500px;
+    right: 590px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption10 p {
+    position: absolute;
+    top: 3530px;
+    left: 1240px;
+    margin-top: 10px;
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* шестая картинка*/
+.partfiveinfo .infoblock .caption9 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption9 img {
+    position: absolute;
+    top: 3470px;
+    right: 150px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption9 p {
+    position: absolute;
+    top: 3462px;
+    left: 500px;
+    margin-top: 10px;
+    width: 900px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* седьмая картинка*/
+.partfiveinfo .infoblock .caption11 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption11 img {
+    position: absolute;
+    top: 3535px;
+    right: -600px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption11 p {
+    position: absolute;
+    top: 3528px;
+    left: 1250px;
+    margin-top: 10px;
+    width: 900px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* восьмая картинка*/
+.partfiveinfo .infoblock .caption12 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption12 img {
+    position: absolute;
+    top: 4090px;
+    right: 150px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption12 p {
+    position: absolute;
+    top: 4085px;
+    left: 500px;
+    margin-top: 10px;
+    width: 900px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* девятая картинка*/
+.partfiveinfo .infoblock .caption14 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption14 img {
+    position: absolute;
+    top: 7800px;
+    right: 50px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption14 p {
+    position: absolute;
+    top: 7792px;
+    left: 600px;
+    margin-top: 10px;
+    width: 900px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* десятая картинка*/
+.partfiveinfo .infoblock .caption15 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.partfiveinfo .infoblock .caption15 img {
+    position: absolute;
+    top: 8965px;
+    right: 50px;
+    width: 25px;
+}
+
+.partfiveinfo .infoblock .caption15 p {
+    position: absolute;
+    top: 8958px;
+    left: 600px;
+    margin-top: 10px;
+    width: 900px;
+    height: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* =========================================
+   АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ
+========================================= */
+body {
+    overflow-x: hidden;
+}
+
+.wrapper {
+    padding-bottom: 40px;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 20px;
+}
+
+header .logo {
+    font-size: clamp(24px, 4vw, 32px);
+    margin-top: 0;
+}
+
+header nav {
+    width: 100%;
+    margin-top: 0;
+}
+
+header nav ul {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 0;
+}
+
+.hero--info {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.hero--info h1 {
+    font-size: clamp(26px, 4.4vw, 42px);
+    max-width: none;
+}
+
+.hero--info h2 {
+    font-size: clamp(20px, 3vw, 28px);
+}
+
+.hero--image {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    width: min(100%, 420px);
+    margin: 0 auto;
+}
+
+.hero--image img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.part--two,
+.part--three,
+.part--four,
+.part--five,
+.part--six,
+.part--seven,
+.part--eight,
+.part--nine,
+.part--ten {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.part--two__title,
+.part--three__title,
+.part--four__title,
+.part--five__title,
+.part--six__title,
+.part--seven__title,
+.part--eight__title,
+.part--nine__title,
+.part--ten__title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: auto;
+    margin-bottom: 8px;
+}
+
+.part--two__title h3,
+.part--three__title .moveable-title,
+.part--four__title .moveable-title,
+.part--five__title h5,
+.part--six__title .moveable-title,
+.part--seven__title .moveable-title,
+.part--eight__title .moveable-title,
+.part--nine__title .moveable-title,
+.part--ten__title .moveable-title {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: clamp(22px, 3.2vw, 32px);
+    white-space: normal !important;
+    display: block;
+    text-align: left;
+}
+
+.part--two .infoblock,
+.partthreeinfo .infoblock,
+.partfourinfo .infoblock,
+.partfiveinfo .infoblock,
+.partsixinfo .infoblock,
+.partseveninfo .infoblock,
+.parteightinfo .infoblock,
+.partnineinfo .infoblock,
+.partteninfo .infoblock {
+    position: relative !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    min-height: auto !important;
+    margin-top: 0;
+}
+
+.part--two .nastya2-text,
+.part--two .infoblock h4,
+.partthreeinfo .infoblock h4,
+.partfourinfo .infoblock h4,
+.partfiveinfo .infoblock h4,
+.partsixinfo .infoblock h4,
+.partseveninfo .infoblock h4,
+.parteightinfo .infoblock h4,
+.partnineinfo .infoblock h4,
+.partteninfo .infoblock h4,
+.moveable-h4,
+.nasty2-text,
+.nasty3-text,
+.nasty5-text,
+.nasty6-text,
+.nasty7-text,
+.nasty8-text,
+.nasty9-text,
+.nasty10-text {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    padding-left: 0 !important;
+    text-align: left !important;
+    font-size: clamp(16px, 2.2vw, 22px);
+    line-height: 1.6;
+}
+
+.part--two .infoblock img,
+.partthreeinfo .image-card img,
+.partthreeinfo .infoblock img,
+.part--five .infoblock .five-photo,
+.part--five .infoblock img {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.part--five .infoblock {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.part--five .infoblock .five-photo {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+}
+
+[class*="caption"] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+[class*="caption"] img {
+    width: 24px;
+    height: auto;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+[class*="caption"] p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero--image {
+        width: min(100%, 320px);
+    }
+
+    .part--five .infoblock {
+        grid-template-columns: 1fr;
+    }
+}
