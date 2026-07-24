@@ -771,18 +771,36 @@ header nav ul li.btn a:hover {
    АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ
    (Вставляем в самый низ файла css/main.css)
 ========================================= */
+/* =========================================
+   ИСПРАВЛЕННАЯ АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ (С ФОНОМ И ТЕКСТОМ)
+   (Вставлять в самый низ main.css вместо предыдущего)
+========================================= */
 @media (max-width: 1024px) {
-    /* Полностью сбрасываем абсолютное позиционирование для ВСЕГО */
-    *, *:before, *:after {
+    /* Возвращаем ваш красивый градиентный фон и светлый цвет текста */
+    html, body {
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 35%),
+            linear-gradient(135deg, #24163d 0%, #7a5cb5 30%, #b88fc7 50%, #f4b8d5 75%, #f4b8d5 100%) !important;
+        background-attachment: fixed !important;
+        color: var(--text-main) !important; /* Белый/светлый текст */
+    }
+
+    /* Аккуратно убираем абсолютное позиционирование только для блоков контента (не трогая цвета) */
+    .hero--image, [class^="part--"], .infoblock, .image-card,
+    [class*="__title"], [class*="-text"], [class*="caption"],
+    [class*="caption"] p, [class*="caption"] img,
+    .five-photo, .moveable-title, .moveable-h4 {
         position: relative !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
         transform: none !important;
     }
 
-    /* Настройка контейнеров и секций */
+    /* Настройка контейнеров */
     .container, .wrapper, .hero, 
     [class^="part--"], .parttwoinfo, .partthreeinfo, 
     .partfourinfo, .partfiveinfo, .partsixinfo, 
@@ -795,9 +813,10 @@ header nav ul li.btn a:hover {
         margin: 0 !important;
         padding: 10px 15px !important;
         box-sizing: border-box !important;
+        background: transparent !important;
     }
 
-    /* Все инфоблоки выстраиваем вертикально */
+    /* Инфоблоки */
     .infoblock {
         display: flex !important;
         flex-direction: column !important;
@@ -808,7 +827,7 @@ header nav ul li.btn a:hover {
         gap: 15px !important;
     }
 
-    /* Картинки делаем адаптивными по ширине экрана */
+    /* Картинки */
     img, .five-photo, .hero--image img, .image-card img {
         width: 100% !important;
         max-width: 100% !important;
@@ -818,11 +837,12 @@ header nav ul li.btn a:hover {
         object-fit: contain !important;
     }
 
-    /* Исправление размеров шрифтов для мобилок */
+    /* Тексты и заголовки (делаем их видимыми и светлыми) */
     h1 {
         font-size: 26px !important;
         text-align: center !important;
         line-height: 1.3 !important;
+        color: var(--text-accent) !important;
     }
 
     h2, h3, h5, .moveable-title {
@@ -830,17 +850,19 @@ header nav ul li.btn a:hover {
         text-align: center !important;
         white-space: normal !important;
         margin: 15px 0 10px 0 !important;
+        color: var(--text-main) !important;
     }
 
-    .moveable-h4, .editable-text, [class*="-text"] h4 {
+    .moveable-h4, .editable-text, [class*="-text"] h4, p {
         font-size: 16px !important;
         line-height: 1.5 !important;
         text-align: left !important;
         padding-left: 0 !important;
         margin: 10px 0 !important;
+        color: var(--text-main) !important;
     }
 
-    /* Аккуратные подписи с сердечками/иконками под картинками */
+    /* Подписи под фото */
     .caption, .captiontwo, [class*="caption"] {
         display: flex !important;
         flex-direction: row !important;
@@ -863,9 +885,10 @@ header nav ul li.btn a:hover {
         margin: 0 !important;
         width: auto !important;
         display: block !important;
+        color: var(--text-main) !important;
     }
 
-    /* Шапка сайта */
+    /* Шапка */
     header.container {
         flex-direction: row !important;
         justify-content: space-between !important;
